@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Category } from '../../../core/models/category.model';
 
 @Component({
@@ -10,9 +10,14 @@ export class CategoryFilterItemComponent implements OnInit {
 
   @Input() categories: Array<Category>;
 
+  @Output() changeActive: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onChange(category) {
+    this.changeActive.emit(category);
+  }
 }

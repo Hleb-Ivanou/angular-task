@@ -20,4 +20,10 @@ export class CategoriesArrayService {
   getCategories(): Promise<Category[]> {
     return categoriesArrayPromise
   }
+  
+  // checkedAllCategories(categoryList: Array<Category>): void {
+  //   categoryList.forEach(element => {
+  //     element.isActive = true;
+  //   })
+  // }
 }

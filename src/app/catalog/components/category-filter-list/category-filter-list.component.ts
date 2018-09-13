@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { CategoriesArrayService } from "../../../core/services/categories-array.service";
 import { Category } from '../../../core/models/category.model';
 
 @Component({
@@ -10,17 +9,16 @@ import { Category } from '../../../core/models/category.model';
 })
 export class CategoryFilterListComponent implements OnInit {
 
-  categories: Array<Category>;
+  @Input() categories: Array<Category>;
 
-  constructor(private categoriesArrayService: CategoriesArrayService) { }
+  @Output() onEmmitChange: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit() {
-    this.getCategories().catch(err => console.log(err));
-  }
+  constructor() { }
 
-  private async getCategories() {
-    this.categories = await this.categoriesArrayService.getCategories()
-    .then((z) => {console.log(z); return z });
+  ngOnInit() {}
+
+  onGetChange(category) {
+    this.onEmmitChange.emit(category);
   }
 
 }
