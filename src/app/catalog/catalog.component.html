@@ -3,4 +3,4 @@
 </p>
 <app-header></app-header>
 <app-main></app-main>
-<p *ngFor="let category of categories">{{category.name}}</p>
+<p *ngFor="let category of categoryService.categories | async">{{category.name}}</p>

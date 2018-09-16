@@ -10,31 +10,34 @@ import {BehaviorSubject } from 'rxjs';
 })
 export class CategoryService {
 
-  // categories: Category[] = []; 
+  private _categories: BehaviorSubject<Category[]> = new BehaviorSubject([]);
+
+  public readonly categories: Observable<Category[]> = this._categories.asObservable();
 
   private apiUrl = 'api/categories';
 
-  private dataSource = new BehaviorSubject(null);
-
-  categories = this.dataSource.asObservable();
-
-  constructor(private http: HttpClient) {}
-
-  getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.apiUrl)
+  constructor(private http: HttpClient) {
+    this.loadInitialData();
   }
 
-  toggleCategory(category: Category) {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-    const url = `${this.apiUrl}/${category.id}`;
-
-    return this.http.put(url, category, httpOptions);
+  loadInitialData() {
+    this.http.get<Category[]>(this.apiUrl).subscribe(res => {
+      this._categories.next(res);
+    })
   }
 
-  updatedData(categories: Category){
-    this.dataSource.next(categories);
+  toggleCategory(toggleCategory: Category) {
+    [...this._categories.getValue()].forEach(element => {
+      if (element.id === toggleCategory.id) {
+        element.isActive = !element.isActive;
+      }
+    });
+    this._categories.next(this._categories.getValue());
+  }
+
+  activeAllCategories() {
+    [...this._categories.getValue()].forEach(element => {element.isActive = true});
+    this._categories.next(this._categories.getValue());
   }
 
 }

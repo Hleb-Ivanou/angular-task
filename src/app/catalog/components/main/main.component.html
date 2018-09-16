@@ -2,7 +2,7 @@
     main works!
 </p>
 <ul>
-    <li *ngFor="let category of categories">
+    <li *ngFor="let category of categoryService.categories | async">
         <p>!!!{{category.name}}!!!!!!{{category.isActive}}!!!</p>
     </li>
 </ul>

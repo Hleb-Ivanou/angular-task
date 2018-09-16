@@ -12,15 +12,10 @@ export class CatalogComponent implements OnInit {
 
   categories: Category[];
 
-  constructor(private categoryService: CategoryService) {}
-
-  ngOnInit() {
-    this.getCategories();
+  constructor(private categoryService: CategoryService) {
   }
 
-  getCategories() {
-    this.categoryService.getCategories()
-    .subscribe(categories => this.categories = categories);
+  ngOnInit() {
   }
 
 }

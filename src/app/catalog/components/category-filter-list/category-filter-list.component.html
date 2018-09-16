@@ -1,9 +1,9 @@
-<p>
-    category-filter-list works!
-</p>
-<ul>
-    <li *ngFor="let category of categories">
-        <input type="checkbox" (change)="onToggle(category)" checked="category.isActive" id="{{category.name}}-filter-item">
-        <label for="{{category.name}}-filter-item">{{category.name}}</label>
-    </li>
-</ul>
+<div class="flex-container">
+    <ul class="filter-category-list">
+        <li class="filter-category-item" *ngFor="let category of categoryService.categories | async">
+            <input class="filter-category-input" [checked]="category.isActive" type="checkbox" (change)="onToggle(category)" checked="category.isActive" id="{{category.name}}-filter-item">
+            <label class="filter-category-label" for="{{category.name}}-filter-item">{{category.name | uppercase}}</label>
+        </li>
+    </ul>
+    <button class="simple-btn" type="button" (click)="onActiveAll()">see all products</button>
+</div>

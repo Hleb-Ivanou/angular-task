@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CategoryService } from "../../../core/category.service";
 import { Category } from "../../../core/category.model";
 
 @Component({
@@ -8,17 +9,18 @@ import { Category } from "../../../core/category.model";
 })
 export class CategoryFilterListComponent implements OnInit {
 
-  @Input() categories: Category[];
-  @Output() toggle: EventEmitter<Category> = new EventEmitter();
-
-  constructor() { }
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
 
   }
 
   onToggle(category: Category) {
-    this.toggle.emit(category);
+    this.categoryService.toggleCategory(category);
+  }
+
+  onActiveAll() {
+    this.categoryService.activeAllCategories();
   }
 
 }
