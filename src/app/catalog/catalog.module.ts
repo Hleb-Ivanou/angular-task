@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CatalogComponent } from './components';
+import { CatalogComponent } from './catalog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { CategoryFilterListComponent } from './components/category-filter-list/category-filter-list.component';
-import { CategoryFilterItemComponent } from './components/category-filter-item/category-filter-item.component';
-import { CategoryFilterBtnComponent } from './components/category-filter-btn/category-filter-btn.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [CatalogComponent, HeaderComponent, CategoryFilterComponent, CategoryFilterListComponent, CategoryFilterItemComponent, CategoryFilterBtnComponent],
-  exports: [CatalogComponent]
+  declarations: [CatalogComponent, HeaderComponent, CategoryFilterComponent, CategoryFilterListComponent, MainComponent]
 })
 export class CatalogModule { }

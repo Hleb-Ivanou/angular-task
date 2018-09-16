@@ -2,5 +2,8 @@
     category-filter-list works!
 </p>
 <ul>
-    <app-category-filter-item class="main-category-filter" (changeActive)="onGetChange($event)" [categories]="categories"></app-category-filter-item>
+    <li *ngFor="let category of categories">
+        <input type="checkbox" (change)="onToggle(category)" checked="category.isActive" id="{{category.name}}-filter-item">
+        <label for="{{category.name}}-filter-item">{{category.name}}</label>
+    </li>
 </ul>

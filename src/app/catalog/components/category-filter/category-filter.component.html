@@ -1,7 +1,4 @@
 <p>
     category-filter works!
 </p>
-<div class="header-filter">
-    <app-category-filter-list (onEmmitChange)="changeState($event)" [categories]="categories" class="header-filter"></app-category-filter-list>
-    <app-category-filter-btn (onEmmitActiveAll)="changeStateAll()" [categories]="categories"></app-category-filter-btn>
-</div>
+<app-category-filter-list [categories]="categories" (toggle)="toggle($event)"></app-category-filter-list>

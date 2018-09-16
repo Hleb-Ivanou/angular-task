@@ -1,7 +1,0 @@
-<p>
-    category-filter-item works!
-</p>
-<li class="main-category-filter-item" *ngFor="let category of categories">
-    <input type="checkbox" [checked]="category.isActive" id="{{category.title}}-filter" (change)="onChange(category)">
-    <label for="{{category.title}}-filter">{{category.title}}</label>
-</li>

@@ -2,18 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CatalogModule } from "../catalog/catalog.module";
-
-import { CoreComponent, PageNotFoundComponent } from './components';
-
-import { CategoriesArrayService } from "./services/categories-array.service";
+import { ProductModule } from "../product/product.module";
+import { CoreComponent } from './core.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    CatalogModule
+    CatalogModule,
+    ProductModule
   ],
-  providers: [CategoriesArrayService],
-  declarations: [PageNotFoundComponent, CoreComponent],
-  exports: [PageNotFoundComponent, CoreComponent]
+  declarations: [CoreComponent]
 })
 export class CoreModule { }

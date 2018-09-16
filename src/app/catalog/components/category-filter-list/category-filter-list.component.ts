@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-import { Category } from '../../../core/models/category.model';
+import { Category } from "../../../core/category.model";
 
 @Component({
   selector: 'app-category-filter-list',
@@ -9,16 +8,17 @@ import { Category } from '../../../core/models/category.model';
 })
 export class CategoryFilterListComponent implements OnInit {
 
-  @Input() categories: Array<Category>;
-
-  @Output() onEmmitChange: EventEmitter<any> = new EventEmitter();
+  @Input() categories: Category[];
+  @Output() toggle: EventEmitter<Category> = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
 
-  onGetChange(category) {
-    this.onEmmitChange.emit(category);
+  }
+
+  onToggle(category: Category) {
+    this.toggle.emit(category);
   }
 
 }

@@ -160,15 +160,6 @@ body {
     font-family: 'quicksandbold';
 }
 
-header {
-    background-color: #f5f6f7;
-    padding: 45px 5%;
-}
-
-.wrap-content {
-    padding: 0 20px;
-}
-
 .justify-cont {
     display: flex;
     align-items: center;

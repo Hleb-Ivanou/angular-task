@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { CategoriesArrayService } from "../../../core/services/categories-array.service";
-import { Category } from '../../../core/models/category.model';
+import { CategoryService } from "../../../core/category.service";
+import { Category } from "../../../core/category.model";
 
 @Component({
   selector: 'app-category-filter',
@@ -10,29 +9,26 @@ import { Category } from '../../../core/models/category.model';
 })
 export class CategoryFilterComponent implements OnInit {
 
-  categories: Array<Category>;
+  categories: Category[];
 
-  constructor(private categoriesArrayService: CategoriesArrayService) { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.getCategories();
   }
 
-  private async getCategories() {
-    this.categories = await this.categoriesArrayService.getCategories();
+  getCategories() {
+    this.categoryService.getCategories()
+    .subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
-  changeState(category):void {
-    this.categories.map((el) => {
-      if (el.id === category.id) {
-        el.isActive = !el.isActive;
-      }
+  toggle(category: Category) {
+    this.categoryService.toggleCategory(category)
+    .subscribe(res => {
+      category.isActive = category.isActive;
     });
-    console.log(event.target, this.categories);
-  }
-  changeStateAll():void {
-    this.categories.map((el) => { el.isActive = true });
-    console.log("btn:", this.categories);
   }
 
 }
