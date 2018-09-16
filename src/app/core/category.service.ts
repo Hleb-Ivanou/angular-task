@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import { HttpClient} from '@angular/common/http';
 import { Category } from "./category.model";
 import {Observable} from 'rxjs';
 import {BehaviorSubject } from 'rxjs';
+import { DataProviderService } from "./data-provider.service";
 
 
 @Injectable({
@@ -14,17 +15,19 @@ export class CategoryService {
 
   public readonly categories: Observable<Category[]> = this._categories.asObservable();
 
-  private apiUrl = 'api/categories';
+  // private apiUrl = 'api/categories';
 
-  constructor(private http: HttpClient) {
-    this.loadInitialData();
-  }
-
-  loadInitialData() {
-    this.http.get<Category[]>(this.apiUrl).subscribe(res => {
+  constructor(private dataProviderService: DataProviderService) {
+    this.dataProviderService.loadInitialCategoriesData().subscribe(res => {
       this._categories.next(res);
     })
   }
+
+  // loadInitialData() {
+  //   this.http.get<Category[]>(this.apiUrl).subscribe(res => {
+  //     this._categories.next(res);
+  //   })
+  // }
 
   toggleCategory(toggleCategory: Category) {
     [...this._categories.getValue()].forEach(element => {

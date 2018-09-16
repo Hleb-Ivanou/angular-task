@@ -1,0 +1,6 @@
+<section *ngFor="let category of categoryService.categories | async">
+    <ng-container *ngIf="category.isActive">
+        <h2>{{category.name | uppercase}}</h2>
+        <app-product-preview></app-product-preview>
+    </ng-container>
+</section>

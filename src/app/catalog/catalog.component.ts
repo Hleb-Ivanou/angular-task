@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from "../core/category.service";
-import { Category } from "../core/category.model";
 
 
 @Component({
@@ -10,10 +8,7 @@ import { Category } from "../core/category.model";
 })
 export class CatalogComponent implements OnInit {
 
-  categories: Category[];
-
-  constructor(private categoryService: CategoryService) {
-  }
+  constructor() {}
 
   ngOnInit() {
   }
