@@ -19,6 +19,8 @@ export class ProductService {
         this.dataProviderService.loadInitialProdutsData().subscribe(res => {this._products.next(res)});
     }
 
+    
+
 //   private apiUrl = 'api/products';
 
 //   constructor(private http: HttpClient) {

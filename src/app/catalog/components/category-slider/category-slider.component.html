@@ -1,0 +1,12 @@
+<div class="slider">
+    <div class="slider-nav">
+        <span class="slider-page-counter">{{pageCurrent}} / {{pageCounter}}</span>
+        <button class="slider-nav-btn" type="button" (click)="onPrev()">&lsaquo;</button>
+        <button class="slider-nav-btn" type="button" (click)="onNext()">&rsaquo;</button>
+    </div>
+    <ul class="slider-list">
+        <li *ngFor="let product of products | slice : showItemStartIndex : showItemEndIndex;">
+            <app-product-preview [product]="product"></app-product-preview>
+        </li>
+    </ul>
+</div>

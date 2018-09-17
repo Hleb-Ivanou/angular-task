@@ -11,6 +11,8 @@ import { CoreComponent } from './core.component';
     CatalogModule,
     ProductModule
   ],
-  declarations: [CoreComponent]
+  declarations: [
+    CoreComponent
+  ],
 })
 export class CoreModule { }

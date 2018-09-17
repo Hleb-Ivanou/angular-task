@@ -1,6 +1,9 @@
-<section *ngFor="let category of categoryService.categories | async">
+<section *ngFor="let category of categoryService.categories | async; let odd = odd;">
     <ng-container *ngIf="category.isActive">
-        <h2>{{category.name | uppercase}}</h2>
-        <app-product-preview></app-product-preview>
+        <div class="catalog-category-title" [class.revers]="odd">
+            <h2 class="catalog-category-title-txt">{{category.name | uppercase}}</h2>
+            <hr class="break-line">
+        </div>
+        <app-category-slider [category]="category"></app-category-slider>
     </ng-container>
 </section>

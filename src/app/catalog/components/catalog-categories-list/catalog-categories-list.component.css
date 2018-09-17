@@ -1,0 +1,24 @@
+.catalog-category-title {
+    display: flex;
+    align-items: center;
+}
+
+.catalog-category-title-txt {
+    margin-right: 40px;
+}
+
+.break-line {
+    height: 2px;
+    width: 100%;
+    background: #cccccc;
+    border: none;
+}
+
+.revers {
+    flex-direction: row-reverse;
+}
+
+.revers .catalog-category-title-txt {
+    margin-right: 0;
+    margin-left: 40px;
+}

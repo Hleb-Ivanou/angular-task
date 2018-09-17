@@ -1,0 +1,33 @@
+.slider {
+    margin: 40px 0 80px;
+}
+
+.slider-nav {
+    text-align: right;
+}
+
+.slider-page-counter {
+    display: block;
+    color: #aa9b77;
+}
+
+.slider-nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aa9b77;
+}
+
+.slider-nav-btn:hover {
+    text-shadow: 0 0 1px #000000;
+}
+
+.slider-nav-btn:focus {
+    outline: none;
+}
+
+.slider-list {
+    display: flex;
+    justify-content: center;
+}

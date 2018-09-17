@@ -8,10 +8,25 @@ import { MainComponent } from './components/main/main.component';
 import { CatalogCategoriesListComponent } from './components/catalog-categories-list/catalog-categories-list.component';
 import { ProductPreviewComponent } from './components/product-preview/product-preview.component';
 
+import { FilterByCategoryPipe } from "../core/filter-by-category.pipe";
+import { SizeComponent } from './components/size/size.component';
+import { CategorySliderComponent } from './components/category-slider/category-slider.component';
+
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [CatalogComponent, HeaderComponent, CategoryFilterComponent, CategoryFilterListComponent, MainComponent, CatalogCategoriesListComponent, ProductPreviewComponent]
+  declarations: [
+    CatalogComponent,
+    HeaderComponent,
+    CategoryFilterComponent,
+    CategoryFilterListComponent,
+    MainComponent,
+    CatalogCategoriesListComponent,
+    ProductPreviewComponent,
+    FilterByCategoryPipe,
+    SizeComponent,
+    CategorySliderComponent
+  ]
 })
 export class CatalogModule { }
