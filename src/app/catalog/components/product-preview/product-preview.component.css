@@ -10,8 +10,27 @@
     justify-content: space-between;
 }
 
+.product-preview-card-header,
+.product-preview-card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 .product-preview-card-pic {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.product-preview-card-pic img {
+    max-height: 230px;
+    max-width: 100%;
+}
+
+.product-preview-card-title {
+    color: #aa9b77;
+}
+
+.product-preview-card-price {
+    font-size: 1rem;
 }

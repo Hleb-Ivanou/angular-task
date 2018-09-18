@@ -1,7 +1,13 @@
 <section class="product-preview-card">
-    <div class="product-preview-card-header"></div>
-    <div class="product-preview-card-pic">
-        <img src="{{product.imageUrl}}" alt="">
+    <div class="product-preview-card-header">
+        <app-size [sizes]="product.sizes"></app-size>
+        <app-color [colors]="product.colors"></app-color>
     </div>
-    <div class="product-preview-card-footer"></div>
+    <div class="product-preview-card-pic">
+        <img src="{{product.imageUrl}}" alt="{{product.name}}">
+    </div>
+    <div class="product-preview-card-footer">
+        <div class="product-preview-card-title">{{product.name | uppercase}}</div>
+        <div class="product-preview-card-price">{{product.price | currency : 'EUR' : 'symbol' : '1.2-2' : 'fr'}}</div>
+    </div>
 </section>

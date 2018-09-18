@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-size',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SizeComponent implements OnInit {
 
+  @Input() sizes: [];
+  isOpen: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onToggle() {
+    this.isOpen = !this.isOpen;
   }
 
 }

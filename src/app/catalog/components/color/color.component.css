@@ -1,0 +1,11 @@
+.color-list {
+    display: flex;
+    justify-content: right;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 3px;
+}

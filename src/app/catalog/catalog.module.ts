@@ -11,6 +11,7 @@ import { ProductPreviewComponent } from './components/product-preview/product-pr
 import { FilterByCategoryPipe } from "../core/filter-by-category.pipe";
 import { SizeComponent } from './components/size/size.component';
 import { CategorySliderComponent } from './components/category-slider/category-slider.component';
+import { ColorComponent } from './components/color/color.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { CategorySliderComponent } from './components/category-slider/category-s
     ProductPreviewComponent,
     FilterByCategoryPipe,
     SizeComponent,
-    CategorySliderComponent
+    CategorySliderComponent,
+    ColorComponent
   ]
 })
 export class CatalogModule { }

@@ -1,0 +1,44 @@
+.size-cont {
+    position: relative;
+}
+
+.size-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.size-btn:focus {
+    outline: none;
+}
+
+.size-btn:after {
+    display: inline-block;
+    content: url(/assets/images/arrow-down.png);
+    transition: 2s;
+    margin-left: 5px;
+    vertical-align: baseline;
+}
+
+.size-btn.open:after {
+    transform: rotate(180deg);
+}
+
+.size-list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.open {
+    display: block;
+}
+
+.size-list-item {
+    text-transform: uppercase;
+    margin: 5px;
+}

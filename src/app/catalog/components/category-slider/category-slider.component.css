@@ -6,6 +6,10 @@
     text-align: right;
 }
 
+.slider-nav.revers {
+    text-align: left;
+}
+
 .slider-page-counter {
     display: block;
     color: #aa9b77;
@@ -17,6 +21,15 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: #aa9b77;
+    padding: 0;
+}
+
+.slider-nav-btn:first-of-type {
+    margin-right: 7px;
+}
+
+.slider-nav-btn:last-of-type {
+    margin-left: 7px;
 }
 
 .slider-nav-btn:hover {

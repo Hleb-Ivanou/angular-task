@@ -1,5 +1,5 @@
 <div class="slider">
-    <div class="slider-nav">
+    <div class="slider-nav" [class.revers]="revers">
         <span class="slider-page-counter">{{pageCurrent}} / {{pageCounter}}</span>
         <button class="slider-nav-btn" type="button" (click)="onPrev()">&lsaquo;</button>
         <button class="slider-nav-btn" type="button" (click)="onNext()">&rsaquo;</button>

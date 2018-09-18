@@ -1,3 +1,7 @@
-<p>
-  size works!
-</p>
+<div class="size-cont">
+    <button *ngIf="sizes.length > 1" [class.open]="isOpen" class="size-btn" type="button" (click)="onToggle()">size</button>
+    <span *ngIf="sizes.length === 1">{{sizes[0] | uppercase}}</span>
+    <ul [class.open]="isOpen" class="size-list">
+        <li class="size-list-item" *ngFor="let size of sizes">{{size}}</li>
+    </ul>
+</div>

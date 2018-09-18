@@ -17,6 +17,7 @@ export class CategorySliderComponent implements OnInit {
   products: Product[];
 
   @Input() category: Category
+  @Input() revers;
 
   constructor(private productService: ProductService) {}
 

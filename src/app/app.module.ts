@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from "./core/core.module";
@@ -13,6 +15,7 @@ import { ProductService } from "./core/product.service";
 
 import { AppComponent } from "./app.component";
 
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
